@@ -1,0 +1,3 @@
+[submodule "fabiomanager"]
+    path = fabiomanager
+    url = https://github.com/Vadimiliano/FABIO.git
