@@ -3,6 +3,7 @@
     "axios": "^1.7.9",
     "date-fns": "^4.1.0",
     "jwt-decode": "^4.0.0",
+    "react-input-mask": "^2.0.4",
     "react-router-dom": "^7.0.2",
     "recharts": "^2.15.1"
   },
