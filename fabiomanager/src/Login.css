@@ -1,0 +1,75 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    z-index: -1;
+}
+
+.auth-container {
+    display: flex;
+    align-items: center;
+    background: #202124;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    position: relative; /* Для позиционирования круга */
+    padding: 6%;
+    z-index: 0;
+}
+
+.circle-background {
+    position: absolute;
+    width: 240px; /* Ширина круга */
+    height: 240px; /* Высота круга */
+    background-color: #9b9a9a; /* Временный цвет для отладки */
+    border-radius: 50%;
+    top: 50%; /* Центрирование по вертикали */
+    left: 28%; /* Центрирование по горизонтали */
+    transform: translate(-50%, -50%); /* Центрирование круга */
+    z-index: 1; /* Убедиться, что круг находится поверх других элементов */
+}
+
+.login-form {
+    margin-left: 55px; /* Отступ от изображения */
+    text-align: center;
+    z-index: 2;
+}
+
+.login-form h2 {
+    text-align: center;
+    color: #61892F;
+}
+
+.login-form input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 50px;
+    border: none;
+}
+
+.login-form button {
+    width: 50%;
+    padding: 10px;
+    border-radius: 50px;
+    background-color: #61892F;
+    color: #fff;
+    border: none;
+    font-weight: bold;
+}
+
+.image-container{
+    z-index: 2;
+    margin-left: -4%;
+    position: relative;
+    transform: translate(-1%, -1%); /* Центрирование круга */
+
+    
+}
+
+.image-container img {
+    width: 200px; /* Ширина изображения */
+    height: 200px;
+}

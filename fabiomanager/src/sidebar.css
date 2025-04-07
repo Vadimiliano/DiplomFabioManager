@@ -1,0 +1,193 @@
+/* Фиксированное позиционирование sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;       /* Высота равна высоте окна */
+    width: 50px;         /* Исходная ширина */
+    background-color: #202124;
+    color: white;
+    padding: 20px;
+    overflow-y: auto;    /* Прокрутка внутри, если контент превышает высоту */
+    transition: width 0.6s;
+    z-index: 1000;
+  }
+  
+  /* При наведении расширяем sidebar */
+  .sidebar:hover {
+    width: 250px;
+  }
+  
+  /* Контейнер профиля */
+  .profile-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  /* Иконка профиля */
+  .profile-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  /* Скрываем информацию о пользователе по умолчанию */
+  .user-info {
+    margin-left: 10px;
+    display: none;
+  }
+  
+  .sidebar:hover .user-info {
+    display: block;
+  }
+  
+  .user-name,
+  .user-surname {
+    margin: 0;
+  }
+  
+  /* Стили для меню */
+  .menu {
+    list-style: none;
+    padding: 0;
+    margin-top: 50px;
+  }
+  
+  .menu-item {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s;
+  }
+  
+  .menu-item:hover {
+    background-color: #D9D9D9;
+  }
+  
+  .menu-icon {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+  }
+  
+  /* Скрываем текст меню по умолчанию */
+  .menu-text {
+    margin-left: 10px;
+    display: none;
+  }
+  
+  .sidebar:hover .menu-text {
+    display: inline-block;
+  }
+  
+  /* Стиль для кнопки выхода */
+  .logout {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .sidebar:hover .logout .menu-text {
+    display: inline-block;
+  }
+  
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 30px;
+    margin: 4% 1% 3% 1%;
+    width: 50px;
+    background-color: #202124;
+    color: white;
+    padding: 20px;
+    transition: width 0.3s;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+
+.sidebar:hover {
+    width: 250px;
+}
+
+.UserName {
+    display: inline-block;
+    color: #757575;
+}
+
+.sidebar i {
+    position: relative;
+    z-index: 1;
+}
+
+.sidebar:hover i {
+    position: relative;
+    z-index: 1;
+}
+
+.sidebar i {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    width: 20px;
+}
+
+.sidebar p {
+    display: none;
+    position: relative;
+    top: 0;
+    left: 30px;
+    margin-top: -20px;
+    color: #757575;
+    font-weight: bold;
+}
+
+.sidebar:hover p {
+    display: inline-block;
+}
+
+.sidebar li {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, margin-top 0.3s;
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
+
+
+.sidebar li:hover {
+    background-color: #D9D9D9;
+    margin-top: 10px;
+    /* Возвращаем элементы списка в исходное положение */
+}
+
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 50px;
+}
+
+
+
+.sidebar li {
+    border-radius: 5px;
+    /* Закругление углов */
+    transition: background-color 0.3s;
+    /* Плавный переход для фона */
+}
+
+.sidebar li:hover {
+    background-color: #D9D9D9;
+    /* Цвет фона при наведении */
+}
+
+

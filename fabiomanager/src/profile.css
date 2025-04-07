@@ -1,0 +1,250 @@
+/* ====== Профиль общие стили ======= */
+
+.profile-container {
+  margin-top: 1%;
+}
+
+.profile-page {
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* === Шапка профиля (аватар + имя) === */
+.profile-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Левая часть: аватар */
+.profile-avatar {
+  flex: 0 0 130px;
+  /* ширина под аватар */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50% solid none;
+
+}
+
+/* Правая часть шапки */
+.profile-header-info {
+  flex: 1;
+  margin-left: 20px;
+  /* отступ от аватара */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Крупное имя */
+.profile-big-name {
+  margin: 0;
+  font-size: 30px;
+  color: #666;
+}
+
+/* Горизонтальная линия под именем */
+.profile-line {
+  margin: 10px 0;
+  width: 100%;
+  height: 1px;
+  background-color: #ccc;
+}
+
+/* 
+     Подписи под линией: 
+     ФИО, Логин, Роль — 
+     ВСЁ рядом в одной строке 
+  */
+.profile-subheader {
+  display: flex;
+  align-items: flex-start;
+  /* или center */
+  gap: 40px;
+  /* Расстояние между тремя блоками */
+}
+
+/* Каждый из трех блоков: FIO / Логин / Роль */
+.profile-sub-block {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Подписи и значения */
+.profile-sub-label {
+  font-weight: bold;
+  color: #333;
+  margin: 0 0 3px;
+}
+
+.profile-sub-value {
+  margin: 0;
+  color: #777;
+}
+
+/* === Основная часть (2 колонки) === */
+.profile-body {
+  display: flex;
+  gap: 20px;
+  height: 70vh;
+}
+
+/* Левая колонка: 2 бокса (один над другим) */
+.profile-left-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Правая колонка: 1 бокс */
+.profile-right-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Общий стиль боксов */
+.profile-box {
+  background-color: #fff;
+  border: 1px solid #aaa;
+  border-radius: 20px;
+  /* Сильное скругление, как в макете */
+  padding: 20px;
+  min-height: 20vh;
+  /* Минимальная высота для всего блока */
+  box-sizing: none;
+}
+
+.tasks-box {
+  height: 25vh;
+  /* Фиксированная высота */
+  overflow-y: auto;
+  /* Добавить прокрутку по вертикали, если содержимое превышает высоту */
+  overflow-x: hidden;
+  /* Скрыть переполнение по горизонтали */
+  padding: 1%;
+  /* Отступы внутри tasks-box, если нужно */
+}
+
+.notification-box {
+  height: 25.5vh;
+  /* Фиксированная высота */
+  overflow-y: auto;
+  /* Добавить прокрутку по вертикали, если содержимое превышает высоту */
+  overflow-x: hidden;
+  /* Скрыть переполнение по горизонтали */
+  padding: 4%;
+  /* Отступы внутри tasks-box, если нужно */
+}
+
+.tasks-box .order-block {
+  display: flex; /* Используем flexbox для выравнивания */
+  align-items: center; /* Центрируем элементы по вертикали */
+  cursor: pointer; /* Указатель при наведении */
+  margin-bottom: 0; /* Убедитесь, что здесь нет отступа */
+}
+
+.data-dot {
+  width: 10px; /* Ширина точки */
+  height: 10px; /* Высота точки */
+  background-color: #61892F; /* Цвет точки (можно изменить) */
+  border-radius: 50%; /* Закругляем углы, чтобы сделать круг */
+  margin-right: 10px; /* Отступ между точкой и текстом */
+}
+
+.notification-box .order-block {
+  display: flex; /* Используем flexbox для выравнивания */
+  align-items: center; /* Центрируем элементы по вертикали */
+  margin-bottom: 10px; /* Отступ между уведомлениями */
+}
+
+
+
+.notification-box .notification-text {
+  font-weight: normal; /* Убираем жирный шрифт */
+}
+
+
+.history-box {
+  height: 60vh;
+  /* Фиксированная высота */
+  overflow-y: auto;
+  /* Добавить прокрутку по вертикали, если содержимое превышает высоту */
+  overflow-x: hidden;
+  /* Скрыть переполнение по горизонтали */
+  padding: 4%;
+  /* Отступы внутри tasks-box, если нужно */
+}
+
+.tasks-box h3 {
+  margin-top: -1%;
+}
+
+.notification-box h3 {
+  margin-top: -1%;
+
+}
+
+.history-box h3 {
+  margin-top: -1%;
+
+}
+
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  width: 330px;
+}
+
+.close {
+  float: right;
+  cursor: pointer;
+}
+
+form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+}
+
+.modalbtn {
+  width: 40%;
+  border-radius: 5px;
+  background-color: #61892F;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  margin-top: 0.2em;
+  padding: 0.8em;
+  text-align: center;
+  margin-left: 30%;
+}

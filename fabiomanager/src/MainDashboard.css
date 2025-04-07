@@ -1,0 +1,75 @@
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.content{
+  width: 100%;
+}
+
+h1 {
+  margin-left: 0.5%;
+}
+
+.info-area {
+  display: flex;
+  gap: 5em;
+  width: 100%;
+
+}
+
+.order-info-container {
+  width: 30%;
+}
+
+.chart-wrapper-container {
+  width: 100%;
+
+}
+
+
+.info-card {
+  background-color: #333;
+  color: #fff;
+  width: 350px;
+  height: 8em;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 5%;
+  text-align: center;
+
+}
+
+.info-card h2 {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.info-number {
+  font-size: 4em;
+  margin-top: 10px;
+}
+
+.chart-wrapper-container {
+  text-align: center;
+  width: 100%;
+  background-color: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 5px;
+  height: 48vh;
+  margin-top: -4%;
+}
+
+
+.chart-wrapper-wide {
+  text-align: center;
+  flex: 1;
+  background-color: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  height: 40vh;
+  margin-top: 1%;
+}

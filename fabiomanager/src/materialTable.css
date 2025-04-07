@@ -1,0 +1,357 @@
+
+html, body {
+    height: 100%;
+    margin: 0;
+    background-color: #f0f0f0; /* Цвет заднего фона */
+}
+
+/* Контейнер страницы */
+.dashboard-container {
+    display: flex;
+    height: 100%;
+    transition: margin-left 0.3s ease-in-out; /* Плавное изменение отступа */
+}
+
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 30px;
+    margin: 4% 1% 3% 1%;
+    width: 50px; /* Ширина по умолчанию */
+    background-color: #202124;
+    color: white;
+    padding: 20px;
+    transition: width 0.3s ease-in-out; /* Плавное изменение ширины */
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.sidebar:hover {
+    width: 250px; /* Максимальная ширина при наведении */
+}
+
+.content {
+    padding: 20px;
+    box-sizing: border-box;
+    margin-left: 8%; /* Отступ по умолчанию */
+    transition: margin-left 0.3s ease-in-out; /* Плавное изменение отступа */
+}
+
+/* Стили для элементов списка */
+.sidebar li {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, margin-top 0.3s;
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
+
+.sidebar li:hover {
+    background-color: #D9D9D9;
+    margin-top: 10px;
+}
+
+/* Стиль для элементов ссылки */
+.sidebar a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Стили для модального окна */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    width: 330px;
+}
+
+.close {
+    float: right;
+    cursor: pointer;
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+form input, form select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+.modalbtn{
+    width: 40%;
+    border-radius: 5px;
+    background-color: #61892F;
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    margin-top: 0.2em;
+    padding: 0.8em;
+    text-align: center;
+    margin-left: 30%;
+}
+
+/* Плавающие чекбоксы */
+.custom-checkbox>input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    
+}
+
+/* Для текста чекбокса */
+.custom-checkbox>span {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+    font-size: 16px;
+    /* Размер текста */
+    cursor: pointer;
+}
+
+/* Создание внешнего круга (чекбокс) */
+.custom-checkbox>span::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    /* Размер круга */
+    height: 20px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 2px solid #adb5bd;
+    /* Цвет границы */
+    border-radius: 50%;
+    /* Делаем круг */
+    margin-right: 10px;
+    /* Отступ текста от круга */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+    background-color: #fff;
+    /* Фон круга */
+    transition: all 0.3s ease;
+}
+
+/* Стили при наведении */
+.custom-checkbox>input:not(:disabled):not(:checked)+span:hover::before {
+    border-color: #86C232;
+    /* Цвет границы при наведении */
+}
+
+/* Стили при активации чекбокса */
+.custom-checkbox>input:checked+span::before {
+    border-color: #86C232;
+    /* Зеленая граница при выборе */
+    background-color: #fff;
+    /* Зеленый фон круга */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-8 -8 16 16'%3e%3ccircle r='8' fill='%2386C232'/%3e%3c/svg%3e");
+    /* Большой зелёный кружок */
+}
+
+/* Стили для disabled чекбоксов */
+.custom-checkbox>input:disabled+span::before {
+    background-color: #e9ecef;
+    /* Серый фон */
+    border-color: #adb5bd;
+    /* Серый бордер */
+}
+
+/* Стили для мобильных устройств */
+@media (max-width: 600px) {
+    .sidebar {
+        width: 0;
+        padding: 0;
+    }
+    .content {
+        margin-left: 0;
+    }
+}
+
+/* Адаптивное поведение для раскрытия сайдбара */
+.sidebar:hover + .content {
+    margin-left: 300px; /* Когда сайдбар раскрыт, контент сдвигается */
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.input-wrapper {
+    position: relative;
+    flex-grow: 1;
+    max-width: 40%;
+    min-width: 20em;
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    top: 23%;
+    width: 20px;
+    height: 20px;
+}
+
+.search-input {
+    padding: 10px 10px 10px 40px;
+    border-radius: 50px;
+    border: 1px solid #ddd;
+    transition: border-color 0.3s;
+    width: 100%;
+}
+
+.search-input:focus {
+    border-color: #86C232;
+    outline: none;
+}
+
+.sort-container {
+    margin-left: 7%;
+    display: flex;
+    gap: 15px;
+}
+
+.sort-container label {
+    font-size: 16px;
+}
+
+/* Таблица данных */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+th,
+td {
+    border: 1px solid #828282;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #dad9d9;
+    color: #333;
+    text-align: center; /* Выравнивание заголовков по центру */
+
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+td {
+    word-wrap: break-word;
+    text-align: center; /* Выравнивание заголовков по центру */
+
+}
+
+.addButtom{
+    width: 15%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #61892F;
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    margin-left: 2%;
+}
+
+.editOrDeleteButtom{
+    width: 100%;
+    border-radius: 5px;
+    background-color: #61892F;
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    margin-top: 0.2em;
+    padding: 0.2em;
+}
+
+/* Стили для ввода данных (textarea для описания) */
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    resize: vertical;
+}
+
+/* Стили кнопок и таблицы */
+.addButtom {
+    background-color: #61892F;
+    color: #fff;
+    font-weight: bold;
+}
+
+.editOrDeleteButtom {
+    background-color: #61892F;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+}
+
+/* Мобильные стили */
+@media (max-width: 600px) {
+
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+    }
+
+    th {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr {
+        margin-bottom: 15px;
+    }
+
+    td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 10px;
+        text-align: left;
+        font-weight: bold;
+    }
+}
